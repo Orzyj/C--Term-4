@@ -17,7 +17,14 @@ namespace zad1
             for (int i = 0; i < n; i++)
             {
                 Liczby x = new Liczby();
-                x.value = random.Next(-100, 101);
+                
+                int number = random.Next(-100, 101);
+                bool w = false;
+                for (int j = 0; j < collection.Count; j++)
+                    if (collection[j].value == number)
+                        w = true;
+                if (w == false)
+                    x.value = number;
                 x.generateValues();
                 collection.Add(x);
             }
